@@ -1,0 +1,39 @@
+.timerBox {
+    text-align: center;
+}
+
+.timerText {
+    font-family: "Open Sans", sans-serif;
+    font-size: 58px;
+    font-weight: 600;
+    margin: 20px 0 30px 0;
+    color: #5365b5;
+    transition: .8s;
+}
+
+.overTimerText {
+    font-family: "Open Sans", sans-serif;
+    font-size: 58px;
+    font-weight: 600;
+    margin: 20px 0 30px 0;
+    color: #e55a5a;
+}
+
+.overText {
+    font-family: "Open Sans", sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+}
+
+.endText {
+    font-family: "Open Sans", sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+}
+
+.chargingPower {
+    font-family: "Open Sans", sans-serif;
+    font-size: 28px;
+    font-weight: 500;
+    text-align: center;
+}

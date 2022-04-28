@@ -1,0 +1,28 @@
+.footerBox {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+
+.footerText {
+    text-align: center;
+    padding-top: 22px;
+    border-top: 1px solid #e6e6e6;
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #6e6e6e;
+    width: 800px;
+    margin: 0 auto 16px;
+
+}
+
+.footerLink {
+    text-decoration: none;
+    color: #2997ff;
+}
+
+.footerLink:hover {
+    text-decoration: underline;
+}

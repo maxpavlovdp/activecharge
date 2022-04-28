@@ -1,0 +1,63 @@
+.paddingBox {
+    padding: 32px 80px;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    transition: .15s;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+}
+
+.paddingBoxFixed {
+    padding: 8px 80px;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-between;
+    transition: .3s;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 6px -2px #f2f2f2;
+}
+
+.homeLink {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.logoImg {
+    margin-right: 10px;
+    height: 40px;
+    width: 40px;
+}
+
+.logoText {
+    color: #393939;
+    font-family: 'Open Sans';
+    font-weight: 700;
+    font-size: 28px;
+    margin: 0;
+}
+
+.routeLinks {
+    display: flex;
+    align-items: end;
+    list-style: none;
+}
+
+.links {
+    color: #6c757d;
+    padding: 4px 12px;
+    font-family: 'Open Sans';
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.links:hover {
+    color: #393939;
+}
