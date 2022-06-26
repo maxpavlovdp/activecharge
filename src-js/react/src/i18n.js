@@ -21,7 +21,7 @@ i18n
         translation: {
           btns: {
             start: "Старт",
-            startFree: "Cтарт Фрі",
+            startFree: "Cтарт 16A",
           },
           title: "Заряди 220 кілометрів за ніч",
           contacts: "Зв'яжіться з нами",
@@ -67,7 +67,7 @@ i18n
         translation: {
           btns: {
             start: "Start",
-            startFree: "Start Free",
+            startFree: "Start 16A",
           },
           title: "Charge 220 kilometers per night",
           contacts: "Contact Us",

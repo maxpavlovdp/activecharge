@@ -19,7 +19,7 @@ function App() {
             <Route path="/charging" element={<ChargingScreen />} />
             <Route path="/overload" element={<MainOverload />} />
             <Route
-              path="/"
+              path="/2"
               element={
                 <PrivateRoute>
                   <MainScreen />

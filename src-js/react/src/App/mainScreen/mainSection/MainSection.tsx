@@ -23,13 +23,13 @@ const MainSection: React.FC = () => {
         <div className={styles.container}>
           <h1 className={styles.title}>{t("title")}</h1>
           <div className={styles.btnStart}>
-            <Link
-              to="/overload"
-              className={styles.btnPay}
-              onClick={startCharging}
-            >
-              {t("btns.start")}
-            </Link>
+            {/*<Link*/}
+            {/*  to="/overload"*/}
+            {/*  className={styles.btnPay}*/}
+            {/*  onClick={startCharging}*/}
+            {/*>*/}
+            {/*  {t("btns.start")}*/}
+            {/*</Link>*/}
             <Link to="/charging" className={styles.btn} onClick={startCharging}>
               {t("btns.startFree")}
             </Link>
