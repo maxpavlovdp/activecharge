@@ -18,8 +18,8 @@ export default function Layout() {
   );
   useEffect(() => {
     deviceStatus?.data?.switchState === true
-      ? setRouteTo("/charging")
-      : setRouteTo("/");
+      ? setRouteTo("/charging/2")
+      : setRouteTo("/2");
   }, [isGotDeviceStatus]);
 
   const fixed = () => {

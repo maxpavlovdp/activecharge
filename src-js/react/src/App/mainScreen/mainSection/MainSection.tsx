@@ -24,13 +24,13 @@ const MainSection: React.FC = () => {
           <h1 className={styles.title}>{t("title")}</h1>
           <div className={styles.btnStart}>
             <Link
-              to="/overload"
+              to="/overload/2"
               className={styles.btnPay}
               onClick={startCharging}
             >
               {t("btns.start")}
             </Link>
-            <Link to="/charging" className={styles.btn} onClick={startCharging}>
+            <Link to="/charging/2" className={styles.btn} onClick={startCharging}>
               {t("btns.startFree")}
             </Link>
           </div>

@@ -16,10 +16,10 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route path="/contract" element={<ContractScreen />} />
             <Route path="/contacts" element={<ContactsScreen />} />
-            <Route path="/charging" element={<ChargingScreen />} />
-            <Route path="/overload" element={<MainOverload />} />
+            <Route path="/charging/:id" element={<ChargingScreen />} />
+            <Route path="/overload/:id" element={<MainOverload />} />
             <Route
-              path="/"
+              path="/:id"
               element={
                 <PrivateRoute>
                   <MainScreen />

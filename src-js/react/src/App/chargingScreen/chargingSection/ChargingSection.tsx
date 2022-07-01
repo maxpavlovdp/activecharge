@@ -53,7 +53,7 @@ const MainSection: React.FC = () => {
           .catch((err) => {
             console.log(err);
           });
-      }, 3500);
+      }, 4000);
     }
   }, [isLoadingCharging]);
 
