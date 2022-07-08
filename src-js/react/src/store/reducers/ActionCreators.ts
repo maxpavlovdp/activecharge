@@ -40,9 +40,9 @@ export const getChargingStatus = () => async (dispatch: AppDispatch) => {
     let stationNumber = localStorage.getItem('stationNumber');
     const response = await axios.get(urlChargingStatus + "?station=" + stationNumber);
     dispatch(
-      FetchSlice.actions.chargingStatusFetchingSuccess(response.data.data)
+      FetchSlice.actions.chargingStatusFetchingSuccess(response.data)
     );
-    console.log(response.data);
+    console.log("chargedKwt: " + response.data);
   } catch (e: any) {
     dispatch(FetchSlice.actions.chargingStatusFetchingError(e.message));
     console.log(e.message);

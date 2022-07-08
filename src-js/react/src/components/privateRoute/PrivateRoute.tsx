@@ -15,8 +15,8 @@ export default function PrivateRoute({ children }: { children: any }) {
   }, [dispatch]);
 
   if (loading) return <Spinner />;
-  console.log(deviceStatus?.data?.switchState);
-  return deviceStatus?.data?.switchState === true ? (
+  console.log(deviceStatus?.switchState);
+  return deviceStatus?.switchState === true ? (
     <Navigate to="/charging" />
   ) : (
     children

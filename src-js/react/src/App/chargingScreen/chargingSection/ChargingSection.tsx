@@ -48,8 +48,8 @@ const MainSection: React.FC = () => {
         axios
           .get(secondsUrl + "?station=" + stationNumber)
           .then((response) => {
-            setSecondsBackend(response.data.data);
-            console.log(response.data);
+            setSecondsBackend(response.data);
+            console.log("leftSeconds: " + response.data);
           })
           .catch((err) => {
             console.log(err);

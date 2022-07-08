@@ -18,7 +18,7 @@ const Timer = (props: ITimer) => {
 
     if (h === 0 && m === 0 && s === 0) {
       setOver(true);
-    } else if (deviceStatus?.data?.switchState === false) {
+    } else if (deviceStatus?.switchState === false) {
       setTime([0, 0, 0]);
     } else if (m === 0 && s === 0) {
       setTime([h - 1, 59, 59]);
@@ -38,7 +38,7 @@ const Timer = (props: ITimer) => {
 
   return (
     <div className={styles.timerBox}>
-      <p className={deviceStatus?.data?.switchState ? styles.timerText : styles.overTimerText}>
+      <p className={deviceStatus?.switchState ? styles.timerText : styles.overTimerText}>
         {`${h.toString().padStart(2, "0")}:${m.toString().padStart(2, "0")}:${s
           .toString()
           .padStart(2, "0")}`}

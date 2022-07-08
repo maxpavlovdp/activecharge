@@ -76,8 +76,8 @@ const OverloadPage = () => {
     await axios
       .get(urlDeviceStatus)
       .then((response) => {
-        setPower(response.data.data.power);
-        console.log(response.data.data.power)
+        setPower(response.data.power);
+        console.log(response.data.power)
       })
       .catch((err) => {
         console.log(err);

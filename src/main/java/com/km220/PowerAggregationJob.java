@@ -57,6 +57,7 @@ public class PowerAggregationJob {
     try {
       DeviceStatus status = deviceService.getStatus(deviceId);
       DeviceCache.powerWt = (float) status.getPower();
+      DeviceCache.voltage = (float) status.getVoltage();
       DeviceCache.isOn = status.isSwitchState();
     } catch (Exception e) {
       e.printStackTrace();

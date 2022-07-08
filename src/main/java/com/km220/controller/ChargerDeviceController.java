@@ -43,19 +43,19 @@ public class ChargerDeviceController {
   }
 
   @GetMapping("/getDeviceStatus")
-  public ChargerResponse<DeviceStatus> getDeviceStatus() {
-    return new ChargerResponse<>("getDeviceStatus", deviceCache.getDeviceStatus());
+  public DeviceStatus getDeviceStatus() {
+    return deviceCache.getDeviceStatus();
   }
 
+
   @GetMapping("/getChargingStatus")
-  public ChargerResponse<Float> getChargingStatus() {
-    return new ChargerResponse<>("chargedKwt", DeviceCache.chargedWt / 1000);
+  public Float getChargingStatus() {
+    return DeviceCache.chargedWt / 1000;
   }
 
   @GetMapping("/getChargingDurationLeftSecs")
-  public ChargerResponse<Long> getChargeTimeLeftSecs() {
-    return new ChargerResponse<>("getChargeTimeLeftSecs",
-        deviceService.getChargingDurationLeftSecs());
+  public Long getChargeTimeLeftSecs() {
+    return deviceService.getChargingDurationLeftSecs();
   }
 
   @GetMapping("/isPowerLimitOvelrloaded")

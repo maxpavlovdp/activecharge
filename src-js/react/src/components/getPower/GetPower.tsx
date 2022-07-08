@@ -20,15 +20,16 @@ export default function GetPower() {
 
   useEffect(() => {
     const timerID = setInterval(() => {
-      if (deviceStatus.data.switchState === true) {
+      if (deviceStatus.switchState === true) {
         getNumber();
       }
     }, 4000);
     return () => clearInterval(timerID);
-  }, [deviceStatus.data.switchState]);
+  }, [deviceStatus.switchState]);
 
   let kWtCharged = chargingStatus;
-  let kWtPower = Number(deviceStatus.data.power) / 1000;
+  let kWtPower = Number(deviceStatus.power) / 1000;
+  let voltage = Number(Math.round(deviceStatus.voltage));
 
   // todo use for car range calculation feature
   // nisan leaf = 150
@@ -42,7 +43,7 @@ export default function GetPower() {
       <div className={styles.getPowerInfoCont}>
         <div
           className={
-            deviceStatus?.data?.switchState ? styles.power : styles.offCont
+            deviceStatus?.switchState ? styles.power : styles.offCont
           }
         >
           <p className={styles.textTitle}>{t("power")}</p>
@@ -50,7 +51,7 @@ export default function GetPower() {
             {kWtPower.toFixed(2)} {t("wt")}
           </p>
         </div>
-        {deviceStatus?.data?.switchState === true ? (
+        {deviceStatus?.switchState === true ? (
           <div className={styles.power}>
             <p className={styles.textTitle}>{t("charging")}</p>
             <p className={styles.text}>{chargeStatus}</p>
@@ -66,12 +67,20 @@ export default function GetPower() {
         )}
       </div>
       <div>
+      {deviceStatus?.switchState && (
+        <div className={styles.voltageBox}>
+          <p className={styles.voltTitle}>{t("voltage")}</p>
+          <p className={styles.voltCharged}>{voltage} {t("v")}</p>
+        </div>
+        
+        )}
         <p className={styles.kmCharged}>
           {isZero
             ? 0
             : Math.round((kWtCharged * 1000) / Math.round(carKwtKmRatio))} 
           {t("km")}
         </p>
+        
       </div>
     </div>
   );
