@@ -22,7 +22,7 @@ function App() {
               path="/2"
               element={
                 <PrivateRoute>
-                  <ContactsScreen />
+                  <MainScreen />
                 </PrivateRoute>
               }
             />
