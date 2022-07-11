@@ -126,6 +126,7 @@ const OverloadPage = () => {
   });
 
   if (error)
+    console.log(error);
     return (
       <ErrorPage errorHeader={t("errorDevHeader")} errorBody={t("errorDevBody")} />
     );
