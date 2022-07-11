@@ -79,7 +79,7 @@ const MainSection: React.FC = () => {
 
   if (error || startDataCharging?.message === 'error')
     return (
-      <ErrorPage errorHeader={t("errorHeader")} errorBody={t("errorBody")} />
+      <ErrorPage errorHeader={t("errorDevHeader")} errorBody={t("errorDevBody")} />
     );
 
   if (loading === true) return <Spinner />;

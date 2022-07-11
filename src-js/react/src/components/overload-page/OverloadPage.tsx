@@ -125,12 +125,10 @@ const OverloadPage = () => {
     }
   });
 
-  if (error) {
-    console.log(error);
+  if (error)
     return (
-      <ErrorPage errorHeader={t("errorHeader")} errorBody={t("errorBody")} />
+      <ErrorPage errorHeader={t("errorDevHeader")} errorBody={t("errorDevBody")} />
     );
-  }
 
   if (isLoadingCharging === true) return <Spinner />;
 
