@@ -3,10 +3,11 @@ import styles from "./MainSection.module.css";
 import mainImg from "../../../assets/charging.png";
 import { Link, useSearchParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { useAppDispatch } from "../../../hooks/reduxHooks";
+import { useAppDispatch, useAppSelector } from "../../../hooks/reduxHooks";
 import { idStart } from "../../../store/reducers/ActionCreators";
 import MainImgLoadingLazy from "../../../components/lazyLoading/MainImgLoadingLazy";
 import placehoderSrc from "../../../assets/chargingTiny.png";
+import ErrorPage from "../../../components/error-page/ErrorPage";
 
 const MainSection: React.FC = () => {
   const [searchParams] = useSearchParams();
@@ -16,11 +17,21 @@ const MainSection: React.FC = () => {
 
   const { t } = useTranslation();
 
+  const { error } = useAppSelector(
+    (state) => state.fetchReducer
+  );
+
   const dispatch = useAppDispatch();
 
   const startCharging = () => {
     dispatch(idStart());
   };
+  if (error) {
+    return (
+    <ErrorPage errorHeader={t("errorDevHeader")} errorBody={t("errorDevBody")} />
+  );
+  }
+  
 
   return (
     <>

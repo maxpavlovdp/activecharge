@@ -57,14 +57,20 @@ public class ChargerDeviceController {
     return new ChargerResponse<>("getDeviceStatus", deviceCache.getDeviceStatus());
   }
 
+
   @GetMapping("/getChargingStatus")
-  public ChargerResponse<Float> getChargingStatus() {
-    return new ChargerResponse<>("chargedKwt", DeviceCache.chargedWt / 1000);
+  public Float getChargingStatus() {
+    return DeviceCache.chargedWt / 1000;
   }
 
   @GetMapping("/getChargingDurationLeftSecs")
+<<<<<<< HEAD
   public ChargerResponse<Long> getChargeTimeLeftSecs() {
     return new ChargerResponse<>("getChargeTimeLeftSecs", 0L);
+=======
+  public Long getChargeTimeLeftSecs() {
+    return deviceService.getChargingDurationLeftSecs();
+>>>>>>> origin/dima
   }
 
   @GetMapping("/isPowerLimitOvelrloaded")

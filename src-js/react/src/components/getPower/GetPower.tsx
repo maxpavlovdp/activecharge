@@ -62,14 +62,22 @@ export default function GetPower() {
           </div>
         )}
       </div>
-      <div>
+      {/* <div>
+      {deviceStatus?.switchState && (
+        <div className={styles.voltageBox}>
+          <p className={styles.voltTitle}>{t("voltage")}</p>
+          <p className={styles.voltCharged}>{voltage} {t("v")}</p>
+        </div>
+        
+        )}
         <p className={styles.kmCharged}>
           {isZero
             ? 0
             : Math.round((kWtCharged * 1000) / Math.round(carKwtKmRatio))}
           {t("km")}
         </p>
-      </div>
+        
+      </div> */}
     </div>
   );
 }
