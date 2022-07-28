@@ -3,6 +3,11 @@
   padding: 0 20px 0;
   width: 100%;
 }
+.powerTimerBox{
+  text-align: center;
+  padding: 40px 20px 60px;
+  width: 100%;
+}
 .kmCharged {
   font-family: "OpenSansRegular", Arial, Helvetica, sans-serif;
   font-weight: 400;
@@ -54,6 +59,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.powerNone{
+  display: none;
 }
 
 .finishContainer {
