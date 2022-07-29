@@ -22,7 +22,7 @@ spring:
     username: km220
     password: Nopassword1
   flyway:
-    clean-on-validation-error: true
+    clean-on-validation-error: false
 
 flyway:
   locations: "classpath:db/migration/pg"
