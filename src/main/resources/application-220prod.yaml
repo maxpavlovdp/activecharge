@@ -2,3 +2,6 @@ ewelink:
   email: eskimorollerr@gmail.com
   password: Nopassword1
 
+spring:
+  flyway:
+    clean-on-validation-error: false

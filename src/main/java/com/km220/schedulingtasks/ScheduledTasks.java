@@ -30,6 +30,6 @@ public class ScheduledTasks {
 //    logger.debug("Scan charging jobs {}", dateFormat.format(new Date()));
 
     chargingService.refresh(stationScanProperties.getScanBatchSize(),
-        stationScanProperties.getScanIntervalMs());
+        stationScanProperties.getScanDelayMs(), stationScanProperties.getScanIntervalMs());
   }
 }

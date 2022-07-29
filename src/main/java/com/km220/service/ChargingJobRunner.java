@@ -23,7 +23,7 @@ class ChargingJobRunner {
     this.deviceService = deviceService;
   }
 
-  public void run(ChargingJobEntity job) {
+  public void run(ChargingJobEntity job, int scanIntervalMs) {
     logger.info("Process charging job with id = {}, number = {}, station number = {}",
         job.getId(), job.getNumber(), job.getStation().getNumber());
 
@@ -31,7 +31,7 @@ class ChargingJobRunner {
 
     logger.info("Device state: {}", deviceStatus);
 
-    job.setChargedWt(job.getChargedWt() + (float) deviceStatus.getPower() / (3600 * 1000));
+    job.setChargedWt(job.getChargedWt() + (float) deviceStatus.getPower() * scanIntervalMs / (3600 * 1000));
     job.setChargingWt((float) deviceStatus.getPower());
     job.setVoltage((float) deviceStatus.getVoltage());
 

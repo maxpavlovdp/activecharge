@@ -1,6 +1,7 @@
 package com.km220.service;
 
 import com.km220.cache.ChargingJobCache;
+import com.km220.config.StationScanProperties;
 import com.km220.dao.job.ChargingJobEntity;
 import com.km220.dao.job.ChargingJobRepository;
 import com.km220.dao.job.ChargingJobState;
@@ -11,6 +12,7 @@ import com.km220.service.device.DeviceService;
 import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -59,15 +61,15 @@ public class ChargingService {
     return jobId;
   }
 
-  public void refresh(int batchSize, int delayTime) {
+  public void refresh(int batchSize, int scanDelayMs, int scanIntervalMs) {
     List<ChargingJobEntity> jobs = chargingJobRepository.scan(ChargingJobState.IN_PROGRESS,
-        batchSize, delayTime);
+        batchSize, scanDelayMs);
 
 //    logger.debug("Processing {} jobs..", jobs.size());
 
     for (ChargingJobEntity job : jobs) {
       try {
-        jobRunner.run(job);
+        jobRunner.run(job, scanIntervalMs );
         chargingJobRepository.update(job);
         chargingJobCache.put(job.getId().toString(), job);
         chargingJobCache.put(job.getStation().getNumber(), job);

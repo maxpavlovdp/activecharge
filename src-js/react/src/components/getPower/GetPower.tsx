@@ -18,7 +18,7 @@ export default function GetPower({ station, sec }: { station: any; sec: any }) {
     return () => clearInterval(timerID);
   }, [deviceStatus?.state]);
 
-  let kWtCharged = deviceStatus?.chargedWt;
+  let kWtCharged = Number(deviceStatus?.chargedWt) / 1000;
   let kWtPower = Number(deviceStatus?.charginWt) / 1000;
   let voltage = Number(Math.round(deviceStatus?.voltage));
 
