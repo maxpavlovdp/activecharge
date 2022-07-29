@@ -31,7 +31,7 @@ export default function GetPower({ station, sec }: { station: any; sec: any }) {
 
   return (
     <>
-      {process.env.REACT_APP_LINK_SERVE === "http://220-km.com:8080/" ? (
+      {process.env.REACT_APP_LINK_SERVE === "something" ? (
         <ProdPower
           kWtPower={kWtPower}
           voltage={voltage}

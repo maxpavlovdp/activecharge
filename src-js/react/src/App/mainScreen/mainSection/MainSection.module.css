@@ -53,6 +53,9 @@
     text-decoration: none;
     cursor: pointer;
 }
+.prodBtnPay {
+    display: none;
+}
 .disaleBtn{
     margin: 0 5px;
     border: none;

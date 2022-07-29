@@ -42,7 +42,7 @@ const MainSection: React.FC = () => {
           <div className={styles.btnStart}>
             <Link
               to="/overload"
-              className={styles.btnPay}
+              className={process.env.REACT_APP_LINK_SERVE === "http://220-km.com:8080/" ? styles.prodBtnPay : styles.btnPay}
               onClick={startCharging}
             >
               {t("btns.start")}
